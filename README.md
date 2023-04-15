@@ -63,3 +63,20 @@ apiService.LoginWithToken(userID, userAuthToken);
 ## Endpoint method calls
 
 All available endpoints and their methods are available in the QobuzApiService class. Every attempt is made to keep the QobuzApiService well documented in the code using c# XML comments, so please refer to the internal documentation for more info.
+
+## Disclaimer & Legal
+I will not be responsible for how you use QobuzApiSharp. 
+
+This library DOES NOT include...
+- Code to bypass Qobuz's region restrictions.
+- Qobuz app IDs or secrets.
+
+QobuzApiSharp does not publish any of Qobuz's private secrets or app IDs. It contains regular expressions and other code to dynamically grab them from Qobuz's web player's *publicly available*  JavaScript, which is not rehosted, but grabbed client side. Scraping public data is not a violation of the Computer Fraud and Abuse Act (USA) according to the Ninth Court of Appeals, [case # 17-16783](http://cdn.ca9.uscourts.gov/datastore/opinions/2019/09/09/17-16783.pdf) (see page 29). 
+
+QobuzApiSharp uses the Qobuz API, but is not endorsed, certified or otherwise approved in any way by Qobuz.
+
+Qobuz brand and name is the registered trademark of its respective owner.
+
+QobuzApiSharp has no partnership, sponsorship or endorsement with Qobuz.
+
+By using QobuzApiSharp, you agree to the following: http://static.qobuz.com/apps/api/QobuzAPI-TermsofUse.pdf
