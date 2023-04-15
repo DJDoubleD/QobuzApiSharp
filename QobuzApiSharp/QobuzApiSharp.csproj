@@ -102,9 +102,10 @@
     <Compile Include="Api\Service\QobuzApiService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NugetPack.bat" />
     <None Include="packages.config" />
     <None Include="QobuzApiSharp.nuspec" />
-    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
