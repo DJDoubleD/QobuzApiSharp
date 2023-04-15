@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QobuzApiSharp", "QobuzApiSharp\QobuzApiSharp.csproj", "{66D7C0C6-272D-41D0-B12A-5578B44F4548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66D7C0C6-272D-41D0-B12A-5578B44F4548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D7C0C6-272D-41D0-B12A-5578B44F4548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D7C0C6-272D-41D0-B12A-5578B44F4548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D7C0C6-272D-41D0-B12A-5578B44F4548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {780DACC2-9706-4C6F-AFC7-619C8219D680}
+	EndGlobalSection
+EndGlobal
