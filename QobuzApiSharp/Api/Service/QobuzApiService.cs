@@ -82,6 +82,7 @@ namespace QobuzApiSharp.Service
             else
             {
                 this.AppId = appId;
+                QobuzHttpClient.DefaultRequestHeaders.Add("X-App-Id", this.AppId);
                 this.AppSecret = appSecret;
             }
         }
@@ -112,8 +113,6 @@ namespace QobuzApiSharp.Service
 
             using (HttpRequestMessage request = new HttpRequestMessage(method, uriBuilder.Uri))
             {
-                request.Headers.Add("X-App-Id", AppId);
-
                 if (withAuthToken)
                 {
                     request.Headers.Add("X-User-Auth-Token", UserAuthToken);
