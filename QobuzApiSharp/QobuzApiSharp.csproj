@@ -53,6 +53,8 @@
     <Compile Include="Api\Models\Content\Album\Album.cs" />
     <Compile Include="Api\Models\Content\Album\AlbumsSameArtist.cs" />
     <Compile Include="Api\Models\Content\Album\ArticleIds.cs" />
+    <Compile Include="Api\Models\Content\Album\Area.cs" />
+    <Compile Include="Api\Models\Content\Album\Period.cs" />
     <Compile Include="Api\Models\Content\Album\Award.cs" />
     <Compile Include="Api\Models\Content\Album\Genre.cs" />
     <Compile Include="Api\Models\Content\Album\Goody.cs" />

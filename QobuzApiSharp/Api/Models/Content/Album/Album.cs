@@ -10,7 +10,7 @@ namespace QobuzApiSharp.Models.Content
         public AlbumsSameArtist AlbumsSameArtist { get; set; }
 
         [JsonProperty("area")]
-        public string Area { get; set; }
+        public Area Area { get; set; }
 
         [JsonProperty("articles")]
         public List<Article> Articles { get; set; }
@@ -97,7 +97,7 @@ namespace QobuzApiSharp.Models.Content
         public bool? ParentalWarning { get; set; }
 
         [JsonProperty("period")]
-        public string Period { get; set; }
+        public Period Period { get; set; }
 
         [JsonProperty("popularity")]
         public int? Popularity { get; set; }
