@@ -11,9 +11,9 @@
 	<description>$description$</description>
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
-	<releaseNotes>Bugfix release to fix usage of X-App-Id header:
-	- Don't set X-App-Id header again for each request
-	- Also add X-App-Id default header when not spoofing Web Player
+	<releaseNotes>Bugfix release to fix Album JSON parse error:
+	- Add Area model object
+	- Add Period model object
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
