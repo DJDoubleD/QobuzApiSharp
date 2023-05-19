@@ -1,4 +1,7 @@
-# QobuzApiSharp
+# QobuzApiSharp 
+![GitHub](https://img.shields.io/github/license/DJDoubleD/QobuzApiSharp?flat)  ![C#](https://img.shields.io/badge/c%23-%23239120.svg?flat&logo=c-sharp&logoColor=white) ![latest release]( https://img.shields.io/github/v/release/DJDoubleD/QobuzApiSharp?color=blue)
+
+[![Visits](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FDJDoubleD%2FQobuzApiSharp&label=visits&countColor=%23263759&style=flat)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FDJDoubleD%2FQobuzApiSharp)  ![Downloads All Releases](https://img.shields.io/github/downloads/DJDoubleD/QobuzApiSharp/total?color=blue&label=downloads)
 
 ## Overview
 
