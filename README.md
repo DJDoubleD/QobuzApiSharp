@@ -3,6 +3,8 @@
 [![Latest Version](https://img.shields.io/github/v/release/DJDoubleD/QobuzApiSharp?color=blue)](../../releases/latest)
 [![Release date](https://img.shields.io/github/release-date/DJDoubleD/QobuzApiSharp)](../../releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/DJDoubleD/QobuzApiSharp/total?color=blue)](../../releases)
+[![Nuget](https://img.shields.io/nuget/v/QobuzApiSharp?color=darkgreen)](https://www.nuget.org/packages/QobuzApiSharp)
+[![Nuget](https://img.shields.io/nuget/dt/QobuzApiSharp?color=darkgreen&label=nuget%20downloads)](https://www.nuget.org/packages/QobuzApiSharp)
 [![C#](https://img.shields.io/badge/c%23-%23239120.svg?flat&logo=c-sharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![License](https://img.shields.io/github/license/DJDoubleD/QobuzApiSharp?flat)](./LICENSE.txt)
 
