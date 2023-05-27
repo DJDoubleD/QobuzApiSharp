@@ -11,9 +11,7 @@
 	<description>$description$</description>
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
-	<releaseNotes>Bugfix release to fix Album JSON parse error:
-	- Add Area model object
-	- Add Period model object
+	<releaseNotes>No changes, just added the XML DOC file that seems to have been missing from previous versions
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
