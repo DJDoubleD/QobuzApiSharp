@@ -11,7 +11,9 @@
 	<description>$description$</description>
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
-	<releaseNotes>No changes, just added the XML DOC file that seems to have been missing from previous versions
+	<releaseNotes>Add new artist endpoint:
+	- Add artist/getReleasesList Endpoint method
+	- Add ReleaseList Model classes
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
