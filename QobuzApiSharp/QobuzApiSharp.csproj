@@ -58,8 +58,18 @@
     <Compile Include="Api\Models\Content\Album\Area.cs" />
     <Compile Include="Api\Models\Content\Album\Period.cs" />
     <Compile Include="Api\Models\Content\Album\Award.cs" />
-    <Compile Include="Api\Models\Content\Album\Genre.cs" />
+    <Compile Include="Api\Models\Content\General\Genre.cs" />
     <Compile Include="Api\Models\Content\Album\Goody.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleasePhysicalSupport.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseRights.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseArtist.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseAudioInfo.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseDates.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseTrack.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseItem.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\Release.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseTrackList.cs" />
+    <Compile Include="Api\Models\Content\ReleaseList\ReleaseList.cs" />
     <Compile Include="Api\Models\Content\General\Article.cs" />
     <Compile Include="Api\Models\Content\General\Artist.cs" />
     <Compile Include="Api\Models\Content\General\AudioInfo.cs" />
@@ -111,5 +121,6 @@
     <None Include="QobuzApiSharp.nuspec" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

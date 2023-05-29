@@ -34,6 +34,7 @@ namespace QobuzApiSharp.Models.Content
 
         [JsonProperty("query")]
         public string Query { get; set; }
+
         [JsonProperty("stories")]
         public ItemSearchResult<Story> Stories { get; set; }
 

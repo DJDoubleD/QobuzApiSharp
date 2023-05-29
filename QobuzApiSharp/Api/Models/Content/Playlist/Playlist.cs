@@ -58,6 +58,7 @@ namespace QobuzApiSharp.Models.Content
 
         [JsonProperty("is_published")]
         public bool? IsPublished { get; set; }
+
         [JsonProperty("items_focus")]
         public List<Focus> ItemsFocus { get; set; }
 
@@ -90,8 +91,9 @@ namespace QobuzApiSharp.Models.Content
 
         [JsonProperty("timestamp_position")]
         public long? TimestampPosition { get; set; }
+
         [JsonProperty("track_ids")]
-        public List<int> TrackIds { get; set; }
+        public Dictionary<string, long> TrackIds { get; set; }
 
         [JsonProperty("tracks")]
         public ItemSearchResult<Track> Tracks { get; set; }
@@ -101,6 +103,7 @@ namespace QobuzApiSharp.Models.Content
 
         [JsonProperty("updated_at")]
         public long? UpdatedAt { get; set; }
+
         [JsonProperty("users_count")]
         public long? UsersCount { get; set; }
     }
