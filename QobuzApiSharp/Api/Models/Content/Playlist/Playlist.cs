@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using QobuzApiSharp.Converters;
 using System.Collections.Generic;
 
 namespace QobuzApiSharp.Models.Content
@@ -93,6 +94,7 @@ namespace QobuzApiSharp.Models.Content
         public long? TimestampPosition { get; set; }
 
         [JsonProperty("track_ids")]
+        [JsonConverter(typeof(TrackIdsConverter))]
         public List<long> TrackIds { get; set; }
 
         [JsonProperty("tracks")]

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Converters\TrackIdsConverter.cs" />
     <Compile Include="Api\Converters\MostPopularContentConverter.cs" />
     <Compile Include="Api\Exceptions\ApiErrorResponseException.cs" />
     <Compile Include="Api\Exceptions\ApiResponseParseErrorException.cs" />
