@@ -93,7 +93,7 @@ namespace QobuzApiSharp.Models.Content
         public long? TimestampPosition { get; set; }
 
         [JsonProperty("track_ids")]
-        public Dictionary<string, long> TrackIds { get; set; }
+        public List<long> TrackIds { get; set; }
 
         [JsonProperty("tracks")]
         public ItemSearchResult<Track> Tracks { get; set; }
