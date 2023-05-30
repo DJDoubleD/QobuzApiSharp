@@ -11,9 +11,8 @@
 	<description>$description$</description>
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
-	<releaseNotes>Add new artist endpoint:
-	- Add artist/getReleasesList Endpoint method
-	- Add ReleaseList Model classes
+	<releaseNotes>Bugfix - Fix Playlist data model:
+	- track_ids should normally be just a List of numbers
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
