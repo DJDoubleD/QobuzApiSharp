@@ -11,8 +11,14 @@
 	<description>$description$</description>
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
-	<releaseNotes>Bugfix - Fix Playlist data model:
-	- track_ids should normally be just a List of numbers
+	<releaseNotes> Support both types of Playlist track_ids contents
+	- track_ids can be a list of numbers in JSON (most common)
+		e.g.: track_ids":[19512577, 36681027]
+		Example playlist: https://play.qobuz.com/playlist/5887115
+	- track_ids can also be a list of string:number combination in JSON
+		e.g.: track_ids":{"0":63353139,"1":53197054,"2":53207301}
+		Example playlist: https://play.qobuz.com/playlist/14888891
+	- Added a converter to parse both types to List&lt;long&gt;
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
