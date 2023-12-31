@@ -2,6 +2,7 @@
 using QobuzApiSharp.Models.Content;
 using System;
 using System.Collections.Generic;
+using QobuzApiSharp.Models;
 
 namespace QobuzApiSharp.Service
 {
@@ -29,6 +30,16 @@ namespace QobuzApiSharp.Service
             };
 
             return GetApiResponse<UserFavoritesIds>("/favorite/getUserFavoriteIds", parameters, true);
+        }
+
+        /// <summary>
+        /// Removes the track from the favorites.
+        /// </summary>
+        /// <param name="favoriteTrackId">Id of the track to remove.</param>
+        /// <returns>A response that identifies if the request had success or not.</returns>
+        public QobuzApiStatusResponse RemoveUserFavorite(long favoriteTrackId)
+        {
+            return PostApiResponse<QobuzApiStatusResponse>("/favorite/delete", null, new Dictionary<string, string>() { { "track_ids", favoriteTrackId.ToString() } }, true);
         }
 
         /// <summary>

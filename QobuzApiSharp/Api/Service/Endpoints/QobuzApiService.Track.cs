@@ -2,6 +2,7 @@
 using QobuzApiSharp.Models.Content;
 using System;
 using System.Collections.Generic;
+using QobuzApiSharp.Models;
 
 namespace QobuzApiSharp.Service
 {
@@ -77,6 +78,23 @@ namespace QobuzApiSharp.Service
             };
 
             return GetApiResponse<SearchResult>("/track/search", parameters, withAuth);
+        }
+
+        /// <summary>
+        /// Add the track to the current user favorites.
+        /// </summary>
+        /// <param name="trackId">Id of the track to add.</param>
+        /// <returns>A boolean that indicates whenever the action was succesful or not.</returns>
+        /// <exception cref="ApiErrorResponseException">Thrown when the API request returns an error.</exception>
+        /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
+        public bool AddToFavourites(long trackId)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                { "track_ids", trackId.ToString() }
+            };
+            var resp = GetApiResponse<QobuzApiStatusResponse>("/favorite/create", parameters, true);
+            return resp.Status == "success";
         }
     }
 }

@@ -102,8 +102,9 @@ namespace QobuzApiSharp.Service
         /// <param name="endpoint">The endpoint.</param>
         /// <param name="parameters">The parameters.</param>
         /// <param name="withAuthToken">If true, with user_auth_token in request header.</param>
+        /// <param name="body">Plain text body if needed.</param>
         /// <returns>A Task.</returns>
-        private async Task<HttpResponseMessage> SendAsync(HttpMethod method, string endpoint, IDictionary<string, string> parameters = null, bool withAuthToken = false)
+        private async Task<HttpResponseMessage> SendAsync(HttpMethod method, string endpoint, IDictionary<string, string> parameters = null, bool withAuthToken = false, string body = null)
         {
             UriBuilder uriBuilder = new UriBuilder(QobuzApiConstants.API_BASE_URL + endpoint);
             if (parameters != null)
@@ -116,6 +117,11 @@ namespace QobuzApiSharp.Service
                 if (withAuthToken)
                 {
                     request.Headers.Add("X-User-Auth-Token", UserAuthToken);
+                }
+
+                if (!string.IsNullOrEmpty(body))
+                {
+                    request.Content = new StringContent(body, System.Text.Encoding.UTF8, "application/x-www-form-urlencoded");
                 }
 
                 return await QobuzHttpClient.SendAsync(request).ConfigureAwait(false);
@@ -133,7 +139,38 @@ namespace QobuzApiSharp.Service
         /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
         private T GetApiResponse<T>(string apiEndpoint, Dictionary<string, string> parameters, bool requiresAuth = false)
         {
-            HttpResponseMessage response = this.SendAsync(HttpMethod.Get, apiEndpoint, parameters, requiresAuth).Result;
+            return SendRestMessageAndDeserializeResponse<T>(apiEndpoint, HttpMethod.Post, null, parameters, requiresAuth);
+        }
+
+        /// <summary>
+        /// Sends a request to the Qobuz REST API and if successful, tries to parse the api response.
+        /// </summary>
+        /// <param name="apiEndpoint">The api endpoint.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <param name="bodyParameters">The parameters.</param>
+        /// <param name="requiresAuth">If true, requires auth.</param>
+        /// <returns>Requested Model object containing parsed API response</returns>
+        /// <exception cref="ApiErrorResponseException">Thrown when the API request returns an error.</exception>
+        /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
+        private T PostApiResponse<T>(string apiEndpoint, Dictionary<string, string> parameters, Dictionary<string, string> bodyParameters, bool requiresAuth = false)
+        {
+            return SendRestMessageAndDeserializeResponse<T>(apiEndpoint, HttpMethod.Post, QobuzApiHelper.ToQueryString(bodyParameters), parameters, requiresAuth);
+        }
+
+        /// <summary>
+        /// Sends a request to the Qobuz REST API and if successful, tries to parse the api response.
+        /// </summary>
+        /// <param name="apiEndpoint">The api endpoint.</param>
+        /// <param name="method">The method of the request.</param>
+        /// <param name="body">Body of the request</param>
+        /// <param name="parameters">Query parameters of the request.</param>
+        /// <param name="requiresAuth">If true, requires auth.</param>
+        /// <returns>Requested Model object containing parsed API response</returns>
+        /// <exception cref="ApiErrorResponseException">Thrown when the API request returns an error.</exception>
+        /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
+        private T SendRestMessageAndDeserializeResponse<T>(string apiEndpoint, HttpMethod method, string body, Dictionary<string, string> parameters, bool requiresAuth)
+        {
+            HttpResponseMessage response = this.SendAsync(method, apiEndpoint, parameters, requiresAuth, body).Result;
 
             if (!response.IsSuccessStatusCode)
             {
