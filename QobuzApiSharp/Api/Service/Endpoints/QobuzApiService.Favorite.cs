@@ -2,6 +2,7 @@
 using QobuzApiSharp.Models.Content;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using QobuzApiSharp.Models;
 
 namespace QobuzApiSharp.Service
@@ -33,13 +34,67 @@ namespace QobuzApiSharp.Service
         }
 
         /// <summary>
+        /// Add the track to the current user favorites.
+        /// </summary>
+        /// <param name="trackIds">Ids of the tracks to add comma separated.</param>
+        /// <param name="albumIds">Ids of the albums to add comma separated.</param>
+        /// <param name="artistIds">Ids of the artists to add comma separated.</param>
+        /// <returns>A boolean that indicates whenever the action was succesful or not.</returns>
+        /// <exception cref="ApiErrorResponseException">Thrown when the API request returns an error.</exception>
+        /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
+        public QobuzApiStatusResponse AddToFavorites(string trackIds, string albumIds, string artistIds)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                { "track_ids", trackIds },
+                { "artist_ids", artistIds },
+                { "album_ids", albumIds }
+            };
+            return GetApiResponse<QobuzApiStatusResponse>("/favorite/create", parameters, true);
+        }
+
+        /// <summary>
+        /// Add the track to the current user favorites.
+        /// </summary>
+        /// <param name="trackIds">Ids of the tracks to add.</param>
+        /// <param name="albumIds">Ids of the albums to add.</param>
+        /// <param name="artistIds">Ids of the artists to add.</param>
+        /// <returns>A boolean that indicates whenever the action was succesful or not.</returns>
+        /// <exception cref="ApiErrorResponseException">Thrown when the API request returns an error.</exception>
+        /// <exception cref="ApiResponseParseErrorException">Thrown when the API response could not be parsed.</exception>
+        public QobuzApiStatusResponse AddToFavorites(IEnumerable<int> trackIds, IEnumerable<int> albumIds, IEnumerable<int> artistIds)
+        {
+            return AddToFavorites(string.Join(",", trackIds??Enumerable.Empty<int>()), string.Join(",", albumIds??Enumerable.Empty<int>()), string.Join(",", artistIds??Enumerable.Empty<int>()));
+        }
+
+        /// <summary>
         /// Removes the track from the favorites.
         /// </summary>
-        /// <param name="favoriteTrackId">Id of the track to remove.</param>
+        /// <param name="trackIds">Ids of the tracks to remove comma separated.</param>
+        /// <param name="albumIds">Ids of the albums to remove comma separated.</param>
+        /// <param name="artistIds">Ids of the artists to remove comma separated.</param>
         /// <returns>A response that identifies if the request had success or not.</returns>
-        public QobuzApiStatusResponse RemoveUserFavorite(long favoriteTrackId)
+        public QobuzApiStatusResponse DeleteFavorite(string trackIds, string albumIds, string artistIds)
         {
-            return PostApiResponse<QobuzApiStatusResponse>("/favorite/delete", null, new Dictionary<string, string>() { { "track_ids", favoriteTrackId.ToString() } }, true);
+            Dictionary<string, string> parameters = new Dictionary<string, string>
+            {
+                { "track_ids", trackIds },
+                { "artist_ids", artistIds },
+                { "album_ids", albumIds }
+            };
+           return GetApiResponse<QobuzApiStatusResponse>("/favorite/delete", parameters, true);
+        }
+        
+        /// <summary>
+        /// Removes the track from the favorites.
+        /// </summary>
+        /// <param name="trackIds">Ids of the tracks to remove.</param>
+        /// <param name="albumIds">Ids of the albums to remove.</param>
+        /// <param name="artistIds">Ids of the artists to remove.</param>
+        /// <returns>A response that identifies if the request had success or not.</returns>
+        public QobuzApiStatusResponse DeleteFavorite(IEnumerable<int> trackIds, IEnumerable<int> albumIds, IEnumerable<int> artistIds)
+        {
+            return DeleteFavorite(string.Join(",", trackIds??Enumerable.Empty<int>()), string.Join(",", albumIds??Enumerable.Empty<int>()), string.Join(",", artistIds??Enumerable.Empty<int>()));
         }
 
         /// <summary>
