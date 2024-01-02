@@ -12,9 +12,9 @@
 	<projectUrl>https://github.com/DJDoubleD/QobuzApiSharp</projectUrl>
 	<repository type="git" url="https://github.com/DJDoubleD/QobuzApiSharp" />
 	<releaseNotes> Add User Favorites Endpoint methods
-	- add user favourites
+	- add user favorites
 		add 1 or more tracks, albums and/or artists to the user's favorites 
-	- remove user favourites
+	- remove user favorites
 		remove 1 or more tracks, albums and/or artists from the user's favorites 
 	</releaseNotes>
 	<copyright>$copyright$</copyright>
