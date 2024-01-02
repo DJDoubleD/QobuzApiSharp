@@ -20,6 +20,10 @@
 	<copyright>$copyright$</copyright>
 	<tags>Qobuz API c#</tags>
 	<readme>docs\README.md</readme>
+	<dependencies>
+		<dependency id="Microsoft.CSharp" version="4.8.0" />
+		<dependency id="Newtonsoft.Json" version="13.0.3" />
+	</dependencies>
   </metadata>
   <files>
 	<file src="..\README.md" target="docs\" />
