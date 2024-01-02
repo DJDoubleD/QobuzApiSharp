@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 namespace QobuzApiSharp.Service
 {
     /// <summary>
-    /// The qobuz api service.
+    /// The service disclosing the various endpoints of the Qobuz REST API. <br/>
+    /// The service can be initialized using your own 'app_id' and 'app_secret', <br/>
+    /// or by letting the service attempt to fetch these 2 values from the Qobuz Web Player.
     /// </summary>
     public sealed partial class QobuzApiService : IDisposable
     {

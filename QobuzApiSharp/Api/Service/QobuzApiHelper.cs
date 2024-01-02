@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 namespace QobuzApiSharp.Service
 {
     /// <summary>
-    /// Qobuz api service helper class.
+    /// An internal helper class for various internal tooling functions.
     /// </summary>
     internal static class QobuzApiHelper
     {

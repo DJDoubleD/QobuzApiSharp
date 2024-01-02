@@ -5,9 +5,7 @@ using System.Collections.Generic;
 
 namespace QobuzApiSharp.Service
 {
-    /// <summary>
-    /// The qobuz api service.
-    /// </summary>
+
     public sealed partial class QobuzApiService : IDisposable
     {
         /// <summary>

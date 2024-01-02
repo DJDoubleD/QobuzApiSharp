@@ -70,7 +70,8 @@ apiService.LoginWithToken(userID, userAuthToken);
 
 ## Endpoint method calls
 
-All available endpoints and their methods are available in the QobuzApiService class. Every attempt is made to keep the QobuzApiService well documented in the code using c# XML comments, so please refer to the internal documentation for more info.
+All available endpoints and their methods are available in the QobuzApiService class. Every attempt is made to keep the QobuzApiService well documented in the code using c# XML comments, so please refer to the internal documentation for more info.  
+For additional convenience, the automatically generated version c# XML comments can also be viewed [here](./docs/QobuzApiSharp.md). (generated using [XmlDocMarkdown](https://github.com/ejball/XmlDocMarkdown))
 
 ## Disclaimer & Legal
 I will not be responsible for how you use QobuzApiSharp. 
